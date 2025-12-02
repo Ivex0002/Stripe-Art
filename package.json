@@ -1,0 +1,49 @@
+{
+  "name": "stripe-art",
+  "version": "1.0.0",
+  "description": "Convert images stripe-style art like montana engels",
+  "homepage": "https://github.com/Ivex0002/stripe-art#readme",
+  "bugs": {
+    "url": "https://github.com/Ivex0002/stripe-art/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "webgl",
+    "image-processing",
+    "art",
+    "stripe-art",
+    "montana-engels",
+    "canvas",
+    "shader",
+    "generative-art"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivex0002/stripe-art.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "license": "MIT",
+  "author": "ivex0002"
+}
