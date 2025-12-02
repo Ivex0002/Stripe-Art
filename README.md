@@ -1,5 +1,9 @@
 # Stripe Art
 
+[![npm version](https://img.shields.io/npm/v/stripe-art)](https://www.npmjs.com/package/stripe-art)
+
+[![github](https://img.shields.io/github/stars/lvex0002/stripe-art)](https://github.com/Ivex0002/stripe-art)
+
 ![Honeycam 2025-12-02 15-28-36](https://github.com/user-attachments/assets/07a9ef50-9f94-450a-a734-ca7a316c7451)
 
 A library that converts images into vertical stripe patterns using WebGL. Line thickness varies according to image brightness, creating an abstract representation of the original image's features.
