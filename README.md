@@ -6,7 +6,7 @@ A library that converts images into vertical stripe patterns using WebGL. Line t
 
 inspired by [montana_engels](https://www.instagram.com/montana_engels)
 
-[example project]()
+[example project](https://github.com/Ivex0002/Stripe-Art-example)
 
 ## Features
 
