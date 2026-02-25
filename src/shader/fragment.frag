@@ -56,7 +56,8 @@ void main() {
 
     float distNorm = abs(xNorm - centerNorm);
 
-    vec3 finalColor = distNorm < lineWidthNorm * 0.5 ? u_lineColor : u_backColor;
+    float mask = step(distNorm, lineWidthNorm * 0.5);
+    vec3 finalColor = mix(u_backColor, u_lineColor, mask);
 
     gl_FragColor = vec4(finalColor, 1.0);
 }

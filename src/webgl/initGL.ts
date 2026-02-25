@@ -1,6 +1,6 @@
 import type { InputImage } from "../type";
-import vertexShaderSource from "../shader/vertex.glsl";
-import fragmentShaderSource from "../shader/fragment.glsl";
+import vertexShaderSource from "../shader/vertex.vert";
+import fragmentShaderSource from "../shader/fragment.frag";
 import { createProgram } from "./createProgram";
 import { measureRect } from "./measureRect";
 
@@ -19,7 +19,7 @@ export function initGL(
   target: HTMLElement,
   gl: WebGLRenderingContext,
   img: InputImage,
-  requestedDpr: number
+  requestedDpr: number,
 ): { program: WebGLProgram; imageAspect: number; effectiveDpr: number } {
   const canvas = gl.canvas as HTMLCanvasElement;
 
@@ -41,10 +41,10 @@ export function initGL(
   const maxDprByWidth = Math.floor(maxTex / Math.max(1, rect.width));
   const maxDprByHeight = Math.floor(maxTex / Math.max(1, rect.height));
   const maxDprByViewportW = Math.floor(
-    maxViewportWidth / Math.max(1, rect.width)
+    maxViewportWidth / Math.max(1, rect.width),
   );
   const maxDprByViewportH = Math.floor(
-    maxViewportHeight / Math.max(1, rect.height)
+    maxViewportHeight / Math.max(1, rect.height),
   );
 
   let effectiveDpr = Math.max(
@@ -54,13 +54,13 @@ export function initGL(
       maxDprByWidth || requestedDpr,
       maxDprByHeight || requestedDpr,
       maxDprByViewportW || requestedDpr,
-      maxDprByViewportH || requestedDpr
-    )
+      maxDprByViewportH || requestedDpr,
+    ),
   );
 
   if (effectiveDpr < requestedDpr) {
     console.warn(
-      `[CreateStripeArt] requested dpr=${requestedDpr} reduced to effectiveDpr=${effectiveDpr} (MAX_TEXTURE_SIZE=${maxTex}, MAX_VIEWPORT_DIMS=[${maxViewportWidth},${maxViewportHeight}])`
+      `[CreateStripeArt] requested dpr=${requestedDpr} reduced to effectiveDpr=${effectiveDpr} (MAX_TEXTURE_SIZE=${maxTex}, MAX_VIEWPORT_DIMS=[${maxViewportWidth},${maxViewportHeight}])`,
     );
   }
 
